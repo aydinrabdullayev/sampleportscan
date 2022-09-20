@@ -9,9 +9,9 @@ with open("iplist.csv", "r") as csvfile:
     next(csvreader)
     #
     for row in csvreader:
-        # do stuff with rows...
 
         # subprocess.call(["nc", "-zv", "142.251.36.78", "443", "-w", "5"])#, stdout=f)
+        # it will do nc -zv ip port -w 5 (wait for 5 second) if network is high latency please put 15 seconds
         subprocess.call(["nc", "-zv", str(row[0]), str(row[1]), "-w", "5"])  # , stdout=f)
-        #print(f)
-        # print(row[0]+" port "+row[1])
+
+#will filter output in future for now it will spit into the concole
